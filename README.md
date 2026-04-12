@@ -14,7 +14,7 @@ AI-tools/
 └── memory/          # 项目记忆和上下文
 ```
 
-## 技能列表
+## Skills
 
 ### code-commit
 创建带上下文的 Git 提交，自动生成符合 conventional commits 规范的提交信息。
@@ -30,11 +30,37 @@ AI-tools/
 ### pre-bash-safety-check.sh
 在执行 Bash 命令前进行安全检查，阻止或警告潜在的危险命令（如 `rm -rf /`、`git push --force` 等）。
 
+## MCP 配置
+
+### github
+GitHub 集成，提供仓库、Issue、PR 等操作能力。使用 HTTP 类型直连 GitHub Copilot MCP 服务。
+
+```bash
+claude mcp add-json github --scope user '{"type":"http","url":"https://api.githubcopilot.com/mcp","headers":{"Authorization":"Bearer YOUR_GITHUB_TOKEN"}}'
+```
+
+详见 [mcp/README.md](mcp/README.md)。
+
 ## 使用方法
 
-1. 将 skills 目录下的技能复制到 `~/.claude/skills/`
-2. 将 hooks 目录下的钩子复制到 `~/.claude/hooks/` 并添加执行权限
-3. 根据需要在 `~/.claude/settings.json` 中配置相应的钩子
+**Skills**：将 skills 目录下的技能复制到 `~/.claude/skills/`
+
+**Hooks**：将 hooks 目录下的钩子复制到 `~/.claude/hooks/` 并添加执行权限，然后在 `~/.claude/settings.json` 中配置：
+
+```json
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [{ "type": "command", "command": "~/.claude/hooks/pre-bash-safety-check.sh" }]
+      }
+    ]
+  }
+}
+```
+
+**MCP**：使用 `claude mcp add` 命令安装，详见 [mcp/README.md](mcp/README.md)。
 
 ## 许可
 
