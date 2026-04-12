@@ -6,6 +6,8 @@ disable-model-invocation: true
 argument-hint: [message]
 ---
 
+# 代码提交 Skill
+
 ## 上下文
 
 - 当前 git 状态: !`git status`
