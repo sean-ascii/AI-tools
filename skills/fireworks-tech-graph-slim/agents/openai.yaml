@@ -1,0 +1,4 @@
+interface:
+  display_name: "Fireworks Tech Graph Slim"
+  short_description: "Generate clean SVG/PNG technical and UML diagrams"
+  default_prompt: "Turn the user's system or workflow description into a clean SVG technical diagram, validate it, and export PNG when requested."

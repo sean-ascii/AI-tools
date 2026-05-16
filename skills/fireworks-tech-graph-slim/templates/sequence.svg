@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" width="960" height="640">
+  <defs>
+    <marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow-gray" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#64748b"/>
+    </marker>
+  </defs>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; }
+    .title { font-size: 24px; font-weight: 700; fill: #1e293b; }
+    .subtitle { font-size: 13px; fill: #64748b; }
+    .participant { font-size: 14px; font-weight: 600; fill: #1e293b; }
+    .participant-sub { font-size: 12px; fill: #64748b; }
+    .phase { font-size: 12px; font-weight: 700; fill: #64748b; letter-spacing: 0.08em; }
+    .message { font-size: 12px; fill: #334155; }
+    .lifeline { stroke: #cbd5e1; stroke-width: 1.5; stroke-dasharray: 5,5; }
+  </style>
+  <rect width="960" height="640" fill="#ffffff"/>
+  <text x="480" y="44" text-anchor="middle" class="title">{{TITLE}}</text>
+  <text x="480" y="68" text-anchor="middle" class="subtitle">Use scripts/render-sequence-svg.py for production sequence diagrams</text>
+
+  <rect x="40" y="132" width="880" height="178" rx="8" fill="#eff6ff" opacity="0.72"/>
+  <text x="64" y="162" class="phase">1. COMMAND DISPATCH</text>
+  <rect x="40" y="324" width="880" height="178" rx="8" fill="#f0fdf4" opacity="0.72"/>
+  <text x="64" y="354" class="phase">2. PROCESSING</text>
+
+  <rect x="36" y="76" width="120" height="42" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="96" y="103" text-anchor="middle" class="participant">User</text>
+  <line x1="96" y1="118" x2="96" y2="588" class="lifeline"/>
+
+  <rect x="206" y="76" width="120" height="42" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="266" y="94" text-anchor="middle" class="participant">Frontend</text>
+  <text x="266" y="110" text-anchor="middle" class="participant-sub">SkillPanel</text>
+  <line x1="266" y1="118" x2="266" y2="588" class="lifeline"/>
+
+  <rect x="376" y="76" width="120" height="42" rx="8" fill="#fff7ed" stroke="#fdba74" stroke-width="1.5"/>
+  <text x="436" y="103" text-anchor="middle" class="participant">Server</text>
+  <line x1="436" y1="118" x2="436" y2="588" class="lifeline"/>
+
+  <rect x="546" y="76" width="120" height="42" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+  <text x="606" y="103" text-anchor="middle" class="participant">Worker</text>
+  <line x1="606" y1="118" x2="606" y2="588" class="lifeline"/>
+
+  <line x1="96" y1="202" x2="266" y2="202" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+  <rect x="152" y="179" width="58" height="22" rx="5" fill="#ffffff" opacity="0.96"/>
+  <text x="181" y="195" text-anchor="middle" class="message">choose</text>
+  <line x1="266" y1="242" x2="436" y2="242" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+  <rect x="298" y="219" width="106" height="22" rx="5" fill="#ffffff" opacity="0.96"/>
+  <text x="351" y="235" text-anchor="middle" class="message">execute event</text>
+
+  <path d="M 436 394 L 504 394 L 504 422 L 436 422" fill="none" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+  <rect x="433" y="371" width="74" height="22" rx="5" fill="#ffffff" opacity="0.96"/>
+  <text x="470" y="387" text-anchor="middle" class="message">validate</text>
+  <line x1="436" y1="434" x2="606" y2="434" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+  <rect x="473" y="411" width="96" height="22" rx="5" fill="#ffffff" opacity="0.96"/>
+  <text x="521" y="427" text-anchor="middle" class="message">dispatch job</text>
+  <line x1="606" y1="474" x2="436" y2="474" stroke="#64748b" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#arrow-gray)"/>
+  <rect x="488" y="451" width="66" height="22" rx="5" fill="#ffffff" opacity="0.96"/>
+  <text x="521" y="467" text-anchor="middle" class="message">result</text>
+</svg>

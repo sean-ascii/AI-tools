@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 700" width="960" height="700">
+  <defs>
+    <marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#059669"/>
+    </marker>
+  </defs>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; }
+    .title { font-size: 24px; font-weight: 700; fill: #1e293b; }
+    .layer-label { font-size: 12px; font-weight: 700; fill: #64748b; letter-spacing: 0.08em; }
+    .node-label { font-size: 15px; font-weight: 600; fill: #1e293b; }
+    .sub-label { font-size: 12px; fill: #64748b; }
+    .arrow-label { font-size: 11px; fill: #475569; }
+  </style>
+  <rect width="960" height="700" fill="#ffffff"/>
+  <text x="480" y="48" text-anchor="middle" class="title">{{TITLE}}</text>
+
+  <rect x="48" y="88" width="864" height="120" rx="8" fill="#eff6ff" stroke="#bfdbfe"/>
+  <text x="72" y="112" class="layer-label">CLIENT</text>
+  <rect x="100" y="132" width="170" height="52" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="185" y="154" text-anchor="middle" class="node-label">Web App</text>
+  <text x="185" y="172" text-anchor="middle" class="sub-label">User workflow</text>
+
+  <rect x="48" y="248" width="864" height="170" rx="8" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="72" y="272" class="layer-label">APPLICATION SERVICES</text>
+  <rect x="330" y="292" width="170" height="58" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="415" y="316" text-anchor="middle" class="node-label">API Gateway</text>
+  <text x="415" y="334" text-anchor="middle" class="sub-label">Auth and routing</text>
+  <rect x="610" y="292" width="180" height="58" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="700" y="316" text-anchor="middle" class="node-label">Worker Service</text>
+  <text x="700" y="334" text-anchor="middle" class="sub-label">Async jobs</text>
+
+  <rect x="48" y="458" width="864" height="150" rx="8" fill="#f0fdf4" stroke="#bbf7d0"/>
+  <text x="72" y="482" class="layer-label">DATA</text>
+  <rect x="330" y="514" width="170" height="58" rx="8" fill="#ffffff" stroke="#86efac" stroke-width="1.5"/>
+  <text x="415" y="538" text-anchor="middle" class="node-label">Database</text>
+  <text x="415" y="556" text-anchor="middle" class="sub-label">Operational state</text>
+  <rect x="610" y="514" width="180" height="58" rx="8" fill="#ffffff" stroke="#86efac" stroke-width="1.5"/>
+  <text x="700" y="538" text-anchor="middle" class="node-label">Object Store</text>
+  <text x="700" y="556" text-anchor="middle" class="sub-label">Artifacts</text>
+
+  <path d="M 270 158 L 330 321" fill="none" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+  <rect x="270" y="228" width="72" height="18" rx="4" fill="#ffffff" opacity="0.95"/>
+  <text x="306" y="241" text-anchor="middle" class="arrow-label">request</text>
+  <path d="M 500 321 L 610 321" fill="none" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+  <path d="M 415 350 L 415 514" fill="none" stroke="#059669" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+  <path d="M 700 350 L 700 514" fill="none" stroke="#059669" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+
+  <line x1="64" y1="642" x2="94" y2="642" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+  <text x="106" y="646" class="sub-label">control flow</text>
+  <line x1="220" y1="642" x2="250" y2="642" stroke="#059669" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+  <text x="262" y="646" class="sub-label">data access</text>
+</svg>
